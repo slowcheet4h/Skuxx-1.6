@@ -221,42 +221,6 @@ extends Mod
                         }
                     }).start();
 
-                } else if((offset == 2 || offset > 2 && offset < 2.5)&& canStep() && fix == 0) {
-                        getMinecraft().getTimer().timerSpeed = 0.2F;
-                        getPlayer().swingItem();
-                        double[] array = new double[10];
-                        array[0] = 0.4D;
-                        array[1] = 0.72D;
-                        array[2] = 0.5D;
-                        array[3] = 0.41D;
-                        array[4] = 0.83D;
-                        array[5] = 1.16D;
-                        array[6] = 1.41D;
-                        array[7] = 1.57D;
-                        array[8] = 1.58D;
-                        array[9] = 1.42D;
-                        for(double off : array) {
-                            getPlayer().sendPacket(new C03PacketPlayer.C04PacketPlayerPosition(getPlayer().posX,getPlayer().posY + off,getPlayer().posZ,true));
-                        }
-                        new Thread(new Runnable() {
-                            @Override
-                            public void run() {
-                                try {
-                                Thread.sleep(600);
-                                }catch (InterruptedException e){
-                                    getMinecraft().getTimer().timerSpeed = 1F;
-                                }
-                           getMinecraft().getTimer().timerSpeed = 1F;
-                            }
-                        }).start();
-                     fix = 2;
-
-
-
-                } else if(canStep() && offset >= 2 && (offset < 2.5D)) {
-                    getPlayer().setPositionAndUpdate(getPlayer().posX,oldY,getPlayer().posZ);
-
-                    getPlayer().jump();
                 }
         }
     }
