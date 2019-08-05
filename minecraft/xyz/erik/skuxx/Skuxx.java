@@ -37,7 +37,7 @@ public class Skuxx
     public static int COLOR = -1;
     private static Skuxx instance;
     private static String user;
-    private double build = 2.0;
+    private double build = 1.6;
     private Myself myself;
     public static xyz.erik.skuxx.ui.click.Console console = null;
     private FriendManager friendManager;
@@ -68,7 +68,6 @@ public class Skuxx
             myself.connect("chat.freenode.net");
         }catch (IOException e){}catch (IrcException asd){}
         myself.joinChannel("#skuxx772");
-      //      myself.changeNick(Skuxx.getUser());
         myself.sendMessage("skuxx a giris yapti.");
         modManager.start();
         try {
